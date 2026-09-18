@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elegant Homes | Interior Design</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Comic Sans MS;
+            background: #c61a4b;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("main-interior.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            color: white;
+        }
+
+        .hero-content .small-title {
+            color: #d6b36a;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: #eee;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .primary-btn {
+            background: #d6b36a;
+            color: #171717;
+        }
+
+        .primary-btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SERVICES SECTION
+        ========================== */
+
+        #services {
+            display: none;
+            padding: 80px 7%;
+            background: #fff;
+        }
+
+        #services.show {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading span {
+            color: #b38a3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* =========================
+           SERVICE CARDS
+        ========================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: #f8f6f2;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.4s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.13);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #666;
+        }
+
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+
+        .about {
+            padding: 90px 7%;
+            background: #f1ede5;
+        }
+
+        .about-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-text span {
+            color: #b38a3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding: 90px 7%;
+            background: white;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--light); border-radius: 12px; padding: 28px; border: 1px solid #e5e7eb; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+    .card-icon { font-size: 36px; margin-bottom: 16px; }
+    .card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .card p { color: var(--gray); font-size: 14px; line-height: 1.7; }
+    .features-bg { background: var(--light); }
+    .stats-section { background: var(--dark); color: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; text-align: center; }
+    .stat-num { font-size: 48px; font-weight: 800; color: #60a5fa; }
+    .stat-desc { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 6px; }
+    .cta-section { background: linear-gradient(135deg, var(--primary), #0ea5e9); color: #fff; text-align: center; }
+    footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 40px 24px; text-align: center; font-size: 13px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-links a:hover { color: #60a5fa; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 70px 16px; }
+      section { padding: 60px 16px; }
+    }
+
+
+        /* =========================
+           CALL TO ACTION
+        ========================== */
+
+        .cta {
+            padding: 90px 20px;
+            text-align: center;
+            background:
+                linear-gradient(rgba(20,20,20,0.8), rgba(20,20,20,0.8)),
+                url("cta-interior.jpg") center/cover no-repeat;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #ddd;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer span {
+            color: #d6b36a;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .about-text h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HERO / ADVERTISEMENT
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Premium Interior Design
+            </div>
+
+            <h1>
+                Transform Your House Into A Beautiful Home
+            </h1>
+
+            <p>
+                We create elegant, comfortable and modern interior spaces
+                designed around your lifestyle, personality and taste.
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    class="btn primary-btn"
+                    onclick="showServices()">
+                    View Our Services
+                </button>
+
+                <a
+                    class="btn whatsapp-btn"
+                    href="https://wa.me/2349121218324?text=Hello%20I%20am%20interested%20in%20your%20interior%20design%20services."
+                    target="_blank">
+                    Order on WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+        <div class="section-heading">
+
+            <span>What We Do</span>
+
+            <h2>Our Interior Design Services</h2>
+
+            <p>
+                From beautiful living rooms to stylish bedrooms and
+                complete home transformations, we bring your vision to life.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Living Room Design</h3>
+
+                    <p>
+                        Beautiful and comfortable living spaces designed
+                        for relaxation, entertainment and family moments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Bedroom Design</h3>
+
+                    <p>
+                        Create a peaceful and stylish bedroom that gives
+                        you the perfect place to relax and recharge.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Kitchen Design</h3>
+
+                    <p>
+                        Functional and beautiful kitchen spaces combining
+                        modern style with practical storage solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Home Office</h3>
+
+                    <p>
+                        Professional and inspiring workspaces designed to
+                        improve comfort, organization and productivity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>POP & Ceiling Design</h3>
+
+                    <p>
+                        Attractive ceiling designs that give your interior
+                        a unique and luxurious finishing touch.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Wall Decoration</h3>
+
+                    <p>
+                        Transform plain walls into stunning focal points
+                        with creative colours, panels and decorative designs.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about">
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <!-- ADD YOUR OWN IMAGE HERE -->
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+            </div>
+
+
+            <div class="about-text">
+
+                <span>Why Choose Us</span>
+
+                <h2>
+                    We Design Spaces You Will Love
+                </h2>
+
+                <p>
+                    Your home should reflect your personality and lifestyle.
+                    Our goal is to create interiors that are beautiful,
+                    functional and comfortable.
+                </p>
+
+                <p>
+                    We pay attention to every detail, from colours and
+                    furniture to lighting, wall finishes and decoration.
+                </p>
+
+                <a
+                    class="btn whatsapp-btn"
+                    href="https://wa.me/2349121218324?text=Hello%20I%20would%20like%20to%20discuss%20an%20interior%20design%20project."
+                    target="_blank">
+                    Discuss Your Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="section-heading">
+
+            <span>Our Portfolio</span>
+
+            <h2>Some Of Our Works</h2>
+
+            <p>
+                Take a look at some of the beautiful spaces we can create.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+        </div>
+
+    </section><br><br><br>
+  <center> <h4><b>OUR BASIC SERVICE</b></h4></center><br><br>
+                            <center><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Building renovation and branding</h3>
+                    <p>We renovate old buildings and give them life. We also handle exterior branding and finishing<br>to make your building stand out and look professional.</p>
+                </div>
+            </div><br><br>
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Pop Suspended ceiling</h3>
+                    <p>We design and install modern POP ceilings that transform any space.</p>
+                </div>
+            </div><br><br>
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Wall screeding</h3>
+                    <p>We deliver fawless,smooth wall finishing.</p>
+                </div>
+            </div><br><br>
+<div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Windows Treatment with curtain</h3>
+                    <p>Luxury window blinds, day & nignt curtains, and classic luxury curtain design.</p>
+                </div>
+            </div><br><br>
+<div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Luxry Bedframe</h3>
+                    <p>Costom-made luxury bed frames. From classic to modern upholsterded designs.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Fully funished kitchen and cabinet</h3>
+                    <p>Modern kitchen,cabinet and storage. We build and install fully fitted cabinets .</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Luxry & classic Wardrobe</h3>
+                    <p>Personalized advice, mood boards, 3D visualizations & material selection.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Installation and supply of furniture</h3>
+                    <p>Personalized advice, mood boards, 3D visualizations & material selection.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Hotel Rebranding & Packinging</h3>
+                    <p>We specialize in hotel makeovers.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Facility Management</h3>
+                    <p>Professional hotel managenment services to help you to run your hotel efficiently.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Building renovation and branding</h3>
+                    <p>Personalized advice, mood boards, 3D visualizations & material selection.</p>
+                </div>
+</center><br><br>
+ 
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>
+            Ready To Transform Your Space?
+        </h2>
+
+        <p>
+            Let us create a beautiful interior that matches your style,
+            needs and budget.
+        </p>
+
+        <a
+            class="btn whatsapp-btn"
+            href="https://wa.me/2349121218324?text=Hello%20I%20want%20to%20order%20your%20interior%20design%20service."
+            target="_blank">
+            Order Now on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Elegant Homes</span>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            WhatsApp: +234 912 121 8324
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function showServices() {
+
+            const services = document.getElementById("services");
+
+            services.classList.toggle("show");
+
+            if (services.classList.contains("show")) {
+
+                setTimeout(function() {
+
+                    services.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }, 100);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
