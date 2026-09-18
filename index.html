@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Living - Interior Design</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Elegant Homes | Interior Design</title>
+
     <style>
         * {
             margin: 0;
@@ -12,423 +13,745 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f8f5f2 0%, #e8e0d5 100%);
-            color: #2c2c2c;
-            line-height: 1.6;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Header / Hero */
+        body {
+            font-family: Comic Sans MS;
+            background: #c61a4b;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
         .hero {
+            min-height: 100vh;
             position: relative;
-            min-height: 90vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-                        url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("main-interior.jpg") center/cover no-repeat;
         }
 
         .hero-content {
-            max-width: 800px;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        .hero p {
-            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
-            font-weight: 300;
-            margin-bottom: 35px;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .main-image {
-            width: 100%;
-            max-width: 420px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-            margin: 25px auto 40px;
-            border: 4px solid rgba(255,255,255,0.3);
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .main-image:hover {
-            transform: scale(1.03);
-        }
-
-        /* Button */
-        .reveal-btn {
-            background: linear-gradient(135deg, #c9a66b, #a67c52);
+            max-width: 850px;
             color: white;
-            border: none;
-            padding: 16px 42px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(166, 124, 82, 0.4);
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
         }
 
-        .reveal-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(166, 124, 82, 0.55);
-        }
-
-        .reveal-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Services Section (hidden by default) */
-        .services-section {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.8s ease, padding 0.6s ease, opacity 0.5s ease;
-            opacity: 0;
-            background: #fff;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .services-section.open {
-            max-height: 3000px;
-            opacity: 1;
-            padding: 60px 20px 80px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            text-align: center;
+        .hero-content .small-title {
+            color: #d6b36a;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: bold;
             margin-bottom: 15px;
-            color: #2c2c2c;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 50px;
-            font-size: 1.1rem;
+        .hero-content h1 {
+            font-size: clamp(42px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
         }
+
+        .hero-content p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            color: #eee;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .primary-btn {
+            background: #d6b36a;
+            color: #171717;
+        }
+
+        .primary-btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SERVICES SECTION
+        ========================== */
+
+        #services {
+            display: none;
+            padding: 80px 7%;
+            background: #fff;
+        }
+
+        #services.show {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading span {
+            color: #b38a3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* =========================
+           SERVICE CARDS
+        ========================== */
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .service-card {
-            background: #faf8f5;
-            border-radius: 16px;
-            padding: 30px 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: all 0.35s ease;
-            border: 1px solid #eee;
+            background: #f8f6f2;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.4s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.13);
         }
 
-        .service-icon {
-            font-size: 2.8rem;
-            margin-bottom: 18px;
+        .service-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
             display: block;
         }
 
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: #333;
-            font-weight: 600;
+        .service-content {
+            padding: 25px;
         }
 
-        .service-card p {
-            font-size: 0.95rem;
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
             color: #666;
         }
 
-        /* Gallery */
-        .gallery {
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+
+        .about {
+            padding: 90px 7%;
+            background: #f1ede5;
+        }
+
+        .about-container {
+            max-width: 1150px;
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-text span {
+            color: #b38a3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            padding: 90px 7%;
+            background: white;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
 
         .gallery-item {
-            position: relative;
-            border-radius: 14px;
+            height: 280px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            aspect-ratio: 4/3;
+            border-radius: 15px;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: 0.5s ease;
         }
 
         .gallery-item:hover img {
             transform: scale(1.08);
         }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--light); border-radius: 12px; padding: 28px; border: 1px solid #e5e7eb; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+    .card-icon { font-size: 36px; margin-bottom: 16px; }
+    .card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .card p { color: var(--gray); font-size: 14px; line-height: 1.7; }
+    .features-bg { background: var(--light); }
+    .stats-section { background: var(--dark); color: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; text-align: center; }
+    .stat-num { font-size: 48px; font-weight: 800; color: #60a5fa; }
+    .stat-desc { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 6px; }
+    .cta-section { background: linear-gradient(135deg, var(--primary), #0ea5e9); color: #fff; text-align: center; }
+    footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 40px 24px; text-align: center; font-size: 13px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-links a:hover { color: #60a5fa; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 70px 16px; }
+      section { padding: 60px 16px; }
+    }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.75));
-            color: white;
-            padding: 20px 15px 12px;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
 
-        /* WhatsApp CTA */
-        .whatsapp-cta {
+        /* =========================
+           CALL TO ACTION
+        ========================== */
+
+        .cta {
+            padding: 90px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background:
+                linear-gradient(rgba(20,20,20,0.8), rgba(20,20,20,0.8)),
+                url("cta-interior.jpg") center/cover no-repeat;
             color: white;
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
-            margin-top: 20px;
         }
 
-        .whatsapp-cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 12px;
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-bottom: 15px;
         }
 
-        .whatsapp-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 28px;
-            opacity: 0.95;
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #ddd;
         }
 
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: #128C7E;
-            text-decoration: none;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.15rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
+        /* =========================
+           FOOTER
+        ========================== */
 
-        .whatsapp-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.2);
-        }
-
-        .whatsapp-btn svg {
-            width: 26px;
-            height: 26px;
-        }
-
-        /* Footer note */
-        .footer-note {
+        footer {
+            background: #171717;
+            color: white;
             text-align: center;
             padding: 30px 20px;
-            font-size: 0.9rem;
-            color: #777;
-            background: #f5f2ed;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .hero {
-                min-height: 85vh;
-                padding: 30px 15px;
+        footer span {
+            color: #d6b36a;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .about-container {
+                grid-template-columns: 1fr;
             }
-            .main-image {
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item {
                 height: 220px;
             }
-            .services-section.open {
-                padding: 40px 15px 60px;
+        }
+
+        @media (max-width: 550px) {
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
+            .about-text h2 {
+                font-size: 34px;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1><b>Polajax Global Services</b></h1>
-            <p>Transform your house into a stunning home. Expert interior design that blends beauty, comfort & functionality.</p>
-            
-            <!-- REPLACE THIS IMAGE WITH YOUR OWN -->
-            <img 
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" 
-                alt="Beautiful living room interior design" 
-                class="main-image"
-                id="main-hero-image">
-            <!-- ↑ Change the src above to your own image URL or local path -->
 
-            <button class="reveal-btn" onclick="toggleServices()">
-                Discover Our Services ↓
-            </button>
+    <!-- =========================
+         HERO / ADVERTISEMENT
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Premium Interior Design
+            </div>
+
+            <h1>
+                Transform Your House Into A Beautiful Home
+            </h1>
+
+            <p>
+                We create elegant, comfortable and modern interior spaces
+                designed around your lifestyle, personality and taste.
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    class="btn primary-btn"
+                    onclick="showServices()">
+                    View Our Services
+                </button>
+
+                <a
+                    class="btn whatsapp-btn"
+                    href="https://wa.me/2349121218324?text=Hello%20I%20am%20interested%20in%20your%20interior%20design%20services."
+                    target="_blank">
+                    Order on WhatsApp
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- SERVICES + GALLERY SECTION (opens below) -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Signature Services</h2>
-            <p class="section-subtitle">From concept to completion — we create spaces that inspire</p>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">🛋️</span>
-                    <h3>Hotel managenment</h3>
-                    <p>Warm, inviting spaces with perfect furniture layout, lighting & color harmony.</p>
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+        <div class="section-heading">
+
+            <span>What We Do</span>
+
+            <h2>Our Interior Design Services</h2>
+
+            <p>
+                From beautiful living rooms to stylish bedrooms and
+                complete home transformations, we bring your vision to life.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Living Room Design</h3>
+
+                    <p>
+                        Beautiful and comfortable living spaces designed
+                        for relaxation, entertainment and family moments.
+                    </p>
+
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🛏️</span>
-                    <h3>Luxury bed frame</h3>
-                    <p>Restful retreats designed for comfort, style and peaceful sleep.</p>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Bedroom Design</h3>
+
+                    <p>
+                        Create a peaceful and stylish bedroom that gives
+                        you the perfect place to relax and recharge.
+                    </p>
+
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🍳</span>
-                    <h3>Kitchen & Dining</h3>
-                    <p>Functional yet elegant kitchens and dining areas that wow your guests.</p>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Kitchen Design</h3>
+
+                    <p>
+                        Functional and beautiful kitchen spaces combining
+                        modern style with practical storage solutions.
+                    </p>
+
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🛁</span>
-                    <h3>Bathroom Luxury</h3>
-                    <p>Spa-like bathrooms with modern fixtures and calming finishes.</p>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Home Office</h3>
+
+                    <p>
+                        Professional and inspiring workspaces designed to
+                        improve comfort, organization and productivity.
+                    </p>
+
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🏢</span>
-                    <h3>Full Home Styling</h3>
-                    <p>Complete interior transformation for apartments, duplexes & villas.</p>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>POP & Ceiling Design</h3>
+
+                    <p>
+                        Attractive ceiling designs that give your interior
+                        a unique and luxurious finishing touch.
+                    </p>
+
                 </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="service-card">
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+                <div class="service-content">
+
+                    <h3>Wall Decoration</h3>
+
+                    <p>
+                        Transform plain walls into stunning focal points
+                        with creative colours, panels and decorative designs.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about">
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <!-- ADD YOUR OWN IMAGE HERE -->
+
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+
+            </div>
+
+
+            <div class="about-text">
+
+                <span>Why Choose Us</span>
+
+                <h2>
+                    We Design Spaces You Will Love
+                </h2>
+
+                <p>
+                    Your home should reflect your personality and lifestyle.
+                    Our goal is to create interiors that are beautiful,
+                    functional and comfortable.
+                </p>
+
+                <p>
+                    We pay attention to every detail, from colours and
+                    furniture to lighting, wall finishes and decoration.
+                </p>
+
+                <a
+                    class="btn whatsapp-btn"
+                    href="https://wa.me/2349121218324?text=Hello%20I%20would%20like%20to%20discuss%20an%20interior%20design%20project."
+                    target="_blank">
+                    Discuss Your Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery">
+
+        <div class="section-heading">
+
+            <span>Our Portfolio</span>
+
+            <h2>Some Of Our Works</h2>
+
+            <p>
+                Take a look at some of the beautiful spaces we can create.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="wallpaper17.jpg"
+                    alt="C:\Users\DELL\Desktop">
+            </div>
+
+        </div>
+
+    </section><br><br><br>
+  <center> <h4><b>OUR BASIC SERVICE</b></h4></center><br><br>
+                            <center><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Building renovation and branding</h3>
+                    <p>We renovate old buildings and give them life. We also handle exterior branding and finishing<br>to make your building stand out and look professional.</p>
+                </div>
+            </div><br><br>
                 <div class="service-card">
                     <span class="service-icon">🎨</span>
-                    <h3>Custom Consultations</h3>
+                    <h3>Pop Suspended ceiling</h3>
+                    <p>We design and install modern POP ceilings that transform any space.</p>
+                </div>
+            </div><br><br>
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Wall screeding</h3>
+                    <p>We deliver fawless,smooth wall finishing.</p>
+                </div>
+            </div><br><br>
+<div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Windows Treatment with curtain</h3>
+                    <p>Luxury window blinds, day & nignt curtains, and classic luxury curtain design.</p>
+                </div>
+            </div><br><br>
+<div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Luxry Bedframe</h3>
+                    <p>Costom-made luxury bed frames. From classic to modern upholsterded designs.</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Fully funished kitchen and cabinet</h3>
+                    <p>Modern kitchen,cabinet and storage. We build and install fully fitted cabinets .</p>
+                </div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Luxry & classic Wardrobe</h3>
                     <p>Personalized advice, mood boards, 3D visualizations & material selection.</p>
                 </div>
-            </div>
-
-            <!-- GALLERY OF WORKS -->
-            <h2 class="section-title">Our Recent Works</h2>
-            <p class="section-subtitle">A glimpse of spaces we’ve transformed</p>
-
-            <div class="gallery">
-                <!-- Replace each src with your own project images -->
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Modern living room">
-                    <div class="gallery-caption">Modern Minimalist Living Room</div>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Installation and supply of furniture</h3>
+                    <p>Personalized advice, mood boards, 3D visualizations & material selection.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Luxury bedroom">
-                    <div class="gallery-caption">Luxury Master Bedroom</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=800&q=80" alt="Kitchen design">
-                    <div class="gallery-caption">Contemporary Kitchen</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Dining area">
-                    <div class="gallery-caption">Elegant Dining Space</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Home interior">
-                    <div class="gallery-caption">Open Concept Living</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=800&q=80" alt="Bathroom">
-                    <div class="gallery-caption">Spa-Inspired Bathroom</div>
-                </div>
-            </div>
-
-            <!-- WHATSAPP ORDER BUTTON -->
-            <div class="whatsapp-cta">
-                <h2>Ready to Transform Your Space?</h2>
-                <p>Chat with us now on WhatsApp for a free consultation & quote</p>
-                <a href="https://wa.me/2349121218324?text=Hello%20Elegant%20Living!%20I%20would%20like%20to%20enquire%20about%20your%20interior%20design%20services." 
-                   class="whatsapp-btn" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    Order / Chat on WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-    <center><h3><u>For more info contact us on whatsapp📞</u></h3></center>
-    <center><!-- WHATSAPP ORDER BUTTON START -->
-<a href="https://wa.me/2349121218324?text=Hi%20Boss%20I%20want%20to%20order%20an%20account" 
-   target="_blank" 
-   style="display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#25D366; color:#ffffff; font-size:17px; font-weight:700; text-decoration:none; padding:16px 30px; border-radius:50px; width:85%; max-width:320px; transition:0.3s; box-shadow:0 4px 15px rgba(37,211,102,0.3); margin:20px auto;">
-   
-   <span style="font-size:20px;">💬</span>
-   Chat on WhatsApp
-</a>
-<!-- WHATSAPP ORDER BUTTON END --></center>
-
-    <div class="footer-note">
-        © 2026 Elegant Living Interiors • Professional Housing Interior Design Services
-    </div>
-
-    <script>
-        function toggleServices() {
-            const section = document.getElementById('services');
-            const btn = document.querySelector('.reveal-btn');
-            
-            section.classList.toggle('open');
-            
-            if (section.classList.contains('open')) {
-                btn.innerHTML = 'Hide Services ↑';
-                // Smooth scroll to services
-                setTimeout(() => {
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            } else {
-                btn.innerHTML = 'Discover Our Services ↓';
-            }
-        }
-    </script>
-</body>
-    </html>
+            </div><br><br><div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Hotel Rebranding & Pa
